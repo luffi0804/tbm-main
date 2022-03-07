@@ -34,8 +34,7 @@ export class SaveTaskComponent implements OnInit {
     } else {
       this._taskServices.saveTask(this.registerTask).subscribe({
         next: (v) => {
-          localStorage.setItem('token', v.token);
-          this._router.navigate(['/lisTask']);
+          this._router.navigate(['/saveTask']);
           this.message = 'Succesfull user registration';
           this.openSnackBarSuccesfull();
         },
