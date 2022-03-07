@@ -21,6 +21,10 @@ export class UserService {
   login(user: any) {
     return this._http.post<any>(this.env + 'user/login', user);
   }
+  
+
+
+
 
   // lo que hace esta optimizacion sirve oara cuando se devuelve un true o un false lo que hace es una doble negacion -- mira si hay un token si lo hay devuelve true, si no devulve false
   loggedIn() {
@@ -36,4 +40,5 @@ export class UserService {
   logout() {
     localStorage.removeItem('token');
   }
+    
 }

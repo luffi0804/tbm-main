@@ -1,1 +1,17 @@
-<p>save-task works!</p>
+<div class="form">
+<mat-card class="card">
+<mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input  [(ngModel)]="registerTask.name" matInput placeholder="Name task" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <textarea [(ngModel)]="registerTask.description" matInput placeholder="Description task" required></textarea>
+  </mat-form-field>
+  <mat-card-actions>
+    <button (click)="saveTask()" class="button" mat-raised-button>
+      Save
+    </button>
+  </mat-card-actions>
+</mat-card>
+</div>

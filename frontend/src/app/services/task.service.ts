@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import { environment } from "../../environments/environment";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TaskService {
-
-  constructor() { }
+  private env: string
+  constructor(private _http: HttpClient) {
+    this.env = environment.APP_URL
+  }
+  saveTask(task: any) {
+    return this._http.post<any>(this.env + 'task/saveTask', task);
+  }
 }
