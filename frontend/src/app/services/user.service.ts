@@ -17,4 +17,23 @@ export class UserService {
   registerUser(user: any) {
     return this._http.post<any>(this.env + 'user/register', user);
   }
+
+  login(user: any) {
+    return this._http.post<any>(this.env + 'user/login', user);
+  }
+
+  // lo que hace esta optimizacion sirve oara cuando se devuelve un true o un false lo que hace es una doble negacion -- mira si hay un token si lo hay devuelve true, si no devulve false
+  loggedIn() {
+    return !!localStorage.getItem('token');
+  }
+
+// guarda el token
+  getToken() {
+    return localStorage.getItem('token');
+  }
+
+  // elimina el token
+  logout() {
+    localStorage.removeItem('token');
+  }
 }
